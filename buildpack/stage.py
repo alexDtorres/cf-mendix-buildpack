@@ -213,4 +213,6 @@ if __name__ == "__main__":
     nginx.stage(BUILDPACK_DIR, BUILD_DIR, CACHE_DIR)
     logging.info("Mendix Cloud Foundry Buildpack staging completed")
 
-    cleanup_dependency_cache(CACHE_DIR, util.CACHED_DEPENDENCIES)
+    # Cache cleanup is causing cf stage to fail. 
+    # Commenting out for experimentation.
+    #cleanup_dependency_cache(CACHE_DIR, util.CACHED_DEPENDENCIES)
